@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>login</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    
+    <style>
+        .container{
+            background-color: aqua;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            padding-top: 50px;
+            padding-bottom: 100px;
+            
+        }
+        .container_div{
+            height: 400px;
+            border-radius: 22px;
+
+            background-color: greenyellow;
+            width: 300px;
+            padding: 50px;
+        }
+        input[type="text"]{
+            height: 40px;
+            width: 300px;
+            border-radius: 10px;
+            margin-top: 20px;
+            background-color: lightblue;
+            color: green;
+            font-size: 20px;
+            font-weight: bold;
+        }
+        .btn_flex{
+            display: flex;
+            justify-content: end;
+            margin-top: 20px;
+        }
+        .style_button{
+            width: 150px;
+            height: 40px;
+            border-radius: 22px;
+            background-color: skyblue;
+            color: green;
+        }
+
+  </style>
+    <script src='main.js'></script>
+</head>
+<body>
+    <form method="get" action="Nssldashbord.html" >
+    <div class="container">
+        <div class="container_div">
+            <div class="namepass"><input type="text"class="get_Name"  placeholder="userid"></div>
+            <div class="namepass"><input type="text" class="get_passward" placeholder="passward"></div>
+            <div class="btn_flex">
+                <div><a href="Nssldashbord.html"> <button class="style_button">login</button></a></div>
+            </div>
+        </div>
+    </div>
+</form>
+
+<script>
+
+    let get_Name=document.querySelector(".get_name").value;
+    let get_passward=document.querySelector(".get_passward").value;
+    console.log(get_Name)
+</script>
+</body>
+</html>

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>nssldashbord</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <style>
+        .container_div{
+            background-color: skyblue;
+            display: flex;
+            justify-content: center;
+            padding: 100px;
+        }
+        .sec2{
+            background-color: aqua;
+            border: 1px solid black;
+            width: 48%;
+            margin-left: 10px;
+            height: auto;
+        }
+        .styleimg{
+            height: 200px;
+            width: 200px;
+            border-radius: 50%;
+        }
+        .sec2_container{
+            border: 1px solid black;
+            border-radius: 22px;
+            margin: 100px;
+            
+            
+            height: 250px;
+            width: 300px;
+            background-color: lightgreen;
+
+        }
+        .logout{
+            border: 1px solid green;
+            background-color: aqua;
+            height: 40px ;
+            width: 150px;
+            border-radius: 22px;
+        }
+        .btn_container{
+            display: flex;
+            justify-content: end;
+            
+        }
+        .name{
+            margin-left: 100px;
+        }
+       .sec1{
+        padding-left: 100px;
+       }
+
+    </style>
+    
+</head>
+<body>
+    <h1>dashbord for nssl coompany</h1>
+    <div class="container">
+        <div class="container_div">
+            <div class="sec2 sec1">
+              
+            </div>
+            <div class="sec2">
+                <div class="sec2_container">
+                <div class="name"><h2>name</h2> </div>
+                <div class="passward name"><h2>passward</h2></div>
+                <div class="btn_container">
+                    <div><a href="Nssllogin.html"> <button class="logout">logout</button></a></div>
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        
+       // let for_name=document.querySelector(".for_name");
+        let sec1=document.querySelector(".sec1");
+        let url="https://api.github.com/users";
+        fetch(url).then((e)=>{
+            return e.json();
+            console.log(e);
+           
+        }).then((ea)=>{
+         // console.table(ea)
+          //console.log(ea)
+          ////////////////////using forEach for etrating the value//////////////////
+//console.log(ea)
+//let oneurl=ear
+ea.forEach(element => {
+    var user_profile=element.url;
+    var url_pershon=element.login;
+    var avatar_url=element.avatar_url;
+      console.log(url_pershon);
+   
+    let createImg=document.createElement("img");
+    createImg.setAttribute("class","styleimg");
+    createImg.setAttribute("src",avatar_url);
+    
+    let for_name=document.createElement("h1");
+     for_name.innerHTML=url_pershon;
+     sec1.appendChild(for_name);
+  
+    sec1.appendChild(createImg)
+});
+
+
+
+////////////////////////// next fecth for getting image//////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////
+        }).catch((ear)=>{
+        
+        console.log(ear);
+        })
+/////////////////////////using again fecth for copy url//////////////////////////////////////////////////////////////
+
+    </script>
+
+
+</body>
+</html>
+
+
+
+<!-- 
+{
+    "login": "mojombo", 
+    "id": 1,
+    "node_id": "MDQ6VXNlcjE=",
+    "avatar_url": "https://avatars.githubusercontent.com/u/1?v=4", /////////////image
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/mojombo",
+    "html_url": "https://github.com/mojombo",
+    "followers_url": "https://api.github.com/users/mojombo/followers",
+    "following_url": "https://api.github.com/users/mojombo/following{/other_user}",
+    "gists_url": "https://api.github.com/users/mojombo/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/mojombo/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/mojombo/subscriptions",
+    "organizations_url": "https://api.github.com/users/mojombo/orgs",
+    "repos_url": "https://api.github.com/users/mojombo/repos",
+    "events_url": "https://api.github.com/users/mojombo/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/mojombo/received_events",
+    "type": "User",
+    "site_admin": false
+  }, -->
